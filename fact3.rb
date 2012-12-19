@@ -1,11 +1,15 @@
 class Fact
   attr_accessor :num
   def initialize(num)
-    @num = num
+    @num = num + 1
   end
   def fact
-    return 1 if @num == 0 
-    return @num * Fact.new(self.num - 1).fact
+    if @num == 1
+      return 1
+    else
+     @num = @num - 1
+     return @num * self.fact
+    end
   end
 end
 
